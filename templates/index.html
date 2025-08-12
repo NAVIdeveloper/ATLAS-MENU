@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" 
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <title>Chopar Pizza - POS</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="">
+    <div class="app-container">
+        <div class="blur-background"></div>
+        
+        <div class="ios-app-wrapper">
+            <!-- Header with prominent cart -->
+            <header class="ios-app-header">
+                <div class="header-content">
+                    <div class="brand-info">
+                        <img src="./assets/images/chopar-logo.png" draggable="false" alt="Chopar Pizza" class="brand-logo">
+                        <h1 class="brand-name">Chopar Pizza</h1>
+                    </div>
+                    <a href="cart.html" class="ios-cart-button">
+                        <ion-icon name="cart" class="cart-icon"></ion-icon>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </header>
+
+            <!-- Horizontal scrollable category badges -->
+            <section class="category-scroller">
+                <div class="category-badges">
+                    <button class="category-badge active">Barchasi</button>
+                    <button class="category-badge">Burgerlar</button>
+                    <button class="category-badge">Pizza</button>
+                    <button class="category-badge">Ichimliklar</button>
+                    <button class="category-badge">Shirinliklar</button>
+                    <button class="category-badge">Salatlar</button>
+                    <button class="category-badge">Kombo</button>
+                    <button class="category-badge">Nonushta</button>
+                </div>
+            </section>
+
+            <!-- Product grid with iOS cards -->
+            <main class="product-grid-container">
+                <div class="ios-product-grid">
+                    <!-- Product 1 -->
+                    <article class="ios-product-card">
+                        <div class="product-image-container">
+                            <img src="./assets/images/burger.avif" alt="GamBurger" draggable="false" class="product-image">
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title">GamBurger</h3>
+                            <p class="product-description">Mazzali gamburger</p>
+                            <div class="product-footer">
+                                <span class="product-price">28,000 so'm</span>
+                                <div class="ios-quantity-control">
+                                    <button class="quantity-btn decrease">−</button>
+                                    <span class="quantity-value">0</span>
+                                    <input type="hidden" name="quantity" id="quantity-hidden" value="0">
+                                    <button class="quantity-btn increase">+</button>
+                                </div>
+                            </div>
+                            <button class="ios-add-button">Qo'shish</button>
+                        </div>
+                    </article>
+
+                    <!-- Product 2 -->
+                    <article class="ios-product-card disabled">
+                        <div class="product-image-container">
+                            <img src="./assets/images/bigburger.avif" alt="Big Burger" draggable="false" class="product-image">
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title">Big Burger</h3>
+                            <p class="product-description">Yoqimli ishtaxa</p>
+                            <div class="product-footer">
+                                <span class="product-price">32,000 so'm</span>
+                                <div class="ios-quantity-control">
+                                    <button class="quantity-btn decrease">−</button>
+                                    <span class="quantity-value">0</span>
+                                    <input type="hidden" name="quantity" id="quantity-hidden" value="0">
+                                    <button class="quantity-btn increase">+</button>
+                                </div>
+                            </div>
+                            <button class="ios-add-button disabled">Savatda mavjud</button>
+                        </div>
+                    </article>
+
+                    <!-- Product 3 -->
+                    <article class="ios-product-card">
+                        <div class="product-image-container">
+                            <img src="./assets/images/pizza.jpg" alt="Milliy Pizza" draggable="false" class="product-image">
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title">Milliy Pizza</h3>
+                            <p class="product-description">5 kishi uchun</p>
+                            <div class="product-footer">
+                                <span class="product-price">40,000 so'm</span>
+                                <div class="ios-quantity-control">
+                                    <button class="quantity-btn decrease">−</button>
+                                    <span class="quantity-value">0</span>
+                                    <input type="hidden" name="quantity" id="quantity-hidden" value="0">
+                                    <button class="quantity-btn increase">+</button>
+                                </div>
+                            </div>
+                            <button class="ios-add-button">Qo'shish</button>
+                        </div>
+                    </article>
+
+                    <!-- Product 4 -->
+                    <article class="ios-product-card">
+                        <div class="product-image-container">
+                            <img src="./assets/images/drink.jpg" alt="Cola" draggable="false" class="product-image">
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title">Cola 0.5</h3>
+                            <p class="product-description">Ajoyib tanlov!</p>
+                            <div class="product-footer">
+                                <span class="product-price">7,000 so'm</span>
+                                <div class="ios-quantity-control">
+                                    <button class="quantity-btn decrease">−</button>
+                                    <span class="quantity-value">0</span>
+                                    <input type="hidden" name="quantity" id="quantity-hidden" value="0">
+                                    <button class="quantity-btn increase">+</button>
+                                </div>
+                            </div>
+                            <button class="ios-add-button">Qo'shish</button>
+                        </div>
+                    </article>
+
+                    <!-- Product 5 -->
+                    <article class="ios-product-card">
+                        <div class="product-image-container">
+                            <img src="./assets/images/chips.avif" alt="Chipslar" draggable="false" class="product-image">
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title">Chipslar</h3>
+                            <p class="product-description">1 tarelka</p>
+                            <div class="product-footer">
+                                <span class="product-price">12,000 so'm</span>
+                                <div class="ios-quantity-control">
+                                    <button class="quantity-btn decrease">−</button>
+                                    <span class="quantity-value">0</span>
+                                    <input type="hidden" name="quantity" id="quantity-hidden" value="0">
+                                    <button class="quantity-btn increase">+</button>
+                                </div>
+                            </div>
+                            <button class="ios-add-button">Qo'shish</button>
+                        </div>
+                    </article>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="./assets/js/menu.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

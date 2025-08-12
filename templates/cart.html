@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" 
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <title>Chopar Pizza - Cart</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/cart.css">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <div class="blur-background"></div>
+        
+        <div class="ios-app-wrapper">
+            <!-- Header with back button -->
+            <header class="ios-app-header">
+                <div class="header-content">
+                    <div class="brand-info">
+                        <a href="index.html" style="margin-right: 12px;">
+                            <ion-icon class="arrow-back" name="arrow-back" style="font-size: 24px;"></ion-icon>
+                        </a>
+                        <h1 class="brand-name">Savat</h1>
+                    </div>
+                    <a href="cart.html" class="ios-cart-button">
+                        <ion-icon name="cart" class="cart-icon"></ion-icon>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </header>
+
+            <!-- Cart Content -->
+            <main class="cart-page">
+                <!-- Empty cart state (hidden when items exist) -->
+                <!-- <div class="empty-cart">
+                    <ion-icon name="cart-outline" class="empty-cart-icon"></ion-icon>
+                    <h3>Savat bo'sh</h3>
+                    <p class="empty-cart-text">Siz hali hech narsa buyurtma qilmagansiz</p>
+                    <a href="index.html" class="back-to-menu">Menyuga qaytish</a>
+                </div> -->
+                
+                <!-- Cart with items -->
+                <div class="cart-items-container">
+                    <!-- Cart Item 1 -->
+                    <div class="cart-item">
+                        <img src="./assets/images/burger.avif" alt="GamBurger" class="cart-item-image">
+                        <div class="cart-item-details">
+                            <h3 class="cart-item-title">GamBurger</h3>
+                            <p class="cart-item-price">28,000 so'm</p>
+                            <div class="cart-item-controls">
+                                <button class="cart-item-remove">O'chirish</button>
+                                <div class="ios-quantity-control">
+                                    <button class="quantity-btn decrease">−</button>
+                                    <span class="quantity-value">1</span>
+                                    <input type="hidden" name="quantity" id="quantity-hidden" value="0">
+                                    <button class="quantity-btn increase">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Cart Item 2 -->
+                    <div class="cart-item">
+                        <img src="./assets/images/drink.jpg" alt="Cola" class="cart-item-image">
+                        <div class="cart-item-details">
+                            <h3 class="cart-item-title">Cola 0.5</h3>
+                            <p class="cart-item-price">7,000 so'm</p>
+                            <div class="cart-item-controls">
+                                <button class="cart-item-remove">O'chirish</button>
+                                <div class="ios-quantity-control">
+                                    <button class="quantity-btn decrease">−</button>
+                                    <span class="quantity-value">2</span>
+                                    <input type="hidden" name="quantity" id="quantity-hidden" value="0">
+                                    <button class="quantity-btn increase">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <div class="summary-row">
+                        <span class="summary-label">Mahsulotlar</span>
+                        <span class="summary-value">35,000 so'm</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Yetkazib berish</span>
+                        <span class="summary-value">10,000 so'm</span>
+                    </div>
+                    <div class="summary-row total-row">
+                        <span class="summary-label total-label">Jami</span>
+                        <span class="summary-value total-value">45,000 so'm</span>
+                    </div>
+                    <button class="checkout-button">Buyurtma berish</button>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="./assets/js/cart.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

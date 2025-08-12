@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Chopar Pizza - Admin Dashboard</title>
+    <link rel="stylesheet" href="./assets/css/admin-dashboard/admin.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/admin-dashboard/products.css">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="blur-background"></div>
+
+        <div class="ios-app-wrapper">
+            <!-- Admin Header -->
+            <header class="ios-app-header">
+                <div class="header-content">
+                    <div class="brand-info">
+                        <img src="./assets/images/chopar-logo.png" draggable="false" alt="Chopar Pizza"
+                            class="brand-logo">
+                        <h1 class="brand-name">Admin Dashboard</h1>
+                    </div>
+                    <div class="admin-controls">
+                        <button class="ios-button" id="logout-btn">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Admin Navigation -->
+            <nav class="admin-nav">
+                <button class="admin-nav-btn" data-section="dashboard">
+                    <ion-icon name="grid-outline"></ion-icon>
+                    <span>Dashboard</span>
+                </button>
+                <button class="admin-nav-btn active" data-section="products">
+                    <ion-icon name="fast-food-outline"></ion-icon>
+                    <span>Products</span>
+                </button>
+                <button class="admin-nav-btn" data-section="orders">
+                    <ion-icon name="receipt-outline"></ion-icon>
+                    <span>Orders</span>
+                </button>
+                <button class="admin-nav-btn" data-section="analytics">
+                    <ion-icon name="stats-chart-outline"></ion-icon>
+                    <span>Analytics</span>
+                </button>
+                <button class="admin-nav-btn" data-section="settings">
+                    <ion-icon name="settings-outline"></ion-icon>
+                    <span>Settings</span>
+                </button>
+            </nav>
+
+            <!-- Main Content Area -->
+            <main class="admin-main">
+                <!-- Products Section -->
+                <section class="admin-section active" id="products-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Product Management</h2>
+                        <div class="header-actions">
+                            <button class="ios-button primary" data-modal-id="modal-add-new" id="add-product-btn">
+                                <ion-icon name="add-outline"></ion-icon>
+                                <span>Add Product</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-management">
+                        <div class="search-filter-bar">
+                            <div class="ios-search">
+                                <ion-icon name="search-outline"></ion-icon>
+                                <input type="text" placeholder="Search products..." id="product-search">
+                            </div>
+                            <div class="filter-group">
+                                <select class="ios-select" id="category-filter">
+                                    <option value="">All Categories</option>
+                                    <option>Burgerlar</option>
+                                    <option>Pizza</option>
+                                    <option>Ichimliklar</option>
+                                    <option>Shirinliklar</option>
+                                </select>
+                                <select class="ios-select" id="status-filter">
+                                    <option value="">All Statuses</option>
+                                    <option value="active">Active</option>
+                                    <option value="inactive">Inactive</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="ios-table-container">
+                            <table class="ios-table">
+                                <thead>
+                                    <tr>
+                                        <th class="product-image-col">Image</th>
+                                        <th class="product-name-col">Product</th>
+                                        <th class="product-category-col">Category</th>
+                                        <th class="product-price-col">Price</th>
+                                        <th class="product-stock-col">Stock</th>
+                                        <th class="product-status-col">Status</th>
+                                        <th class="product-actions-col">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="products-table-body">
+                                    <!-- Product rows will be inserted here by JavaScript -->
+                                    <tr>
+                                        <td>
+                                            <img src="./assets/images/burger.avif" class="table-product-img">
+                                        </td>
+                                        <td>
+                                            <div class="product-info">
+                                                <h4>GamBurger</h4>
+                                                <p class="product-description">Juicy beef patty with cheese and
+                                                    vegetables</p>
+                                            </div>
+                                        </td>
+                                        <td>Burgerlar</td>
+                                        <td>28,000 so'm</td>
+                                        <td>
+                                            <div class="stock-indicator">
+                                                <span class="stock-value">15</span>
+                                                <div class="stock-bar" style="--stock-level: 75%;"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="status-badge active">Active</span></td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button class="ios-table-btn" title="Edit">
+                                                    <ion-icon name="create-outline"></ion-icon>
+                                                </button>
+                                                <button class="ios-table-btn" title="Toggle Status">
+                                                    <ion-icon name="power-outline"></ion-icon>
+                                                </button>
+                                                <button class="ios-table-btn danger" title="Delete">
+                                                    <ion-icon name="trash-outline"></ion-icon>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="./assets/images/bigburger.avif" class="table-product-img">
+                                        </td>
+                                        <td>
+                                            <div class="product-info">
+                                                <h4>Big Burger</h4>
+                                                <p class="product-description">Double patty with special sauce</p>
+                                            </div>
+                                        </td>
+                                        <td>Burgerlar</td>
+                                        <td>32,000 so'm</td>
+                                        <td>
+                                            <div class="stock-indicator">
+                                                <span class="stock-value">8</span>
+                                                <div class="stock-bar" style="--stock-level: 40%;"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="status-badge active">Active</span></td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button class="ios-table-btn" title="Edit">
+                                                    <ion-icon name="create-outline"></ion-icon>
+                                                </button>
+                                                <button class="ios-table-btn" title="Toggle Status">
+                                                    <ion-icon name="power-outline"></ion-icon>
+                                                </button>
+                                                <button class="ios-table-btn danger" title="Delete">
+                                                    <ion-icon name="trash-outline"></ion-icon>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="./assets/images/pizza.jpg" class="table-product-img">
+                                        </td>
+                                        <td>
+                                            <div class="product-info">
+                                                <h4>Milliy Pizza</h4>
+                                                <p class="product-description">Traditional Uzbek style pizza</p>
+                                            </div>
+                                        </td>
+                                        <td>Pizza</td>
+                                        <td>40,000 so'm</td>
+                                        <td>
+                                            <div class="stock-indicator">
+                                                <span class="stock-value">0</span>
+                                                <div class="stock-bar" style="--stock-level: 0%;"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="status-badge inactive">Out of Stock</span></td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button class="ios-table-btn" title="Edit">
+                                                    <ion-icon name="create-outline"></ion-icon>
+                                                </button>
+                                                <button class="ios-table-btn" title="Toggle Status">
+                                                    <ion-icon name="power-outline"></ion-icon>
+                                                </button>
+                                                <button class="ios-table-btn danger" title="Delete">
+                                                    <ion-icon name="trash-outline"></ion-icon>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="table-footer">
+                            <div class="table-info">
+                                Showing <span id="showing-count">3</span> of <span id="total-count">15</span> products
+                            </div>
+                            <div class="pagination">
+                                <button class="ios-button" disabled>
+                                    <ion-icon name="chevron-back-outline"></ion-icon>
+                                </button>
+                                <span class="page-info">Page 1 of 3</span>
+                                <button class="ios-button">
+                                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Add Product Modal -->
+    <div class="ios-modal" id="modal-add-new">
+        <div class="modal-overlay"></div>
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3>Add New Product</h3>
+                <button class="modal-close-btn">
+                    <ion-icon name="close-outline"></ion-icon>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Product Name</label>
+                        <input type="text" class="form-input" placeholder="Cheeseburger Deluxe">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Category</label>
+                        <div class="custom-select">
+                            <select>
+                                <option value="">Select category</option>
+                                <option>Burgerlar</option>
+                                <option>Pizza</option>
+                                <option>Ichimliklar</option>
+                                <option>Shirinliklar</option>
+                            </select>
+                            <div class="select-arrow">
+                                <ion-icon name="chevron-down-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Price</label>
+                        <div class="input-group">
+                            <span class="input-prefix">so'm</span>
+                            <input type="number" class="form-input" placeholder="28,000">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Stock Quantity</label>
+                        <input type="number" class="form-input" placeholder="50">
+                    </div>
+                    <div class="form-group full-width">
+                        <label class="form-label">Description</label>
+                        <textarea class="form-textarea" placeholder="Describe the product..."></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label class="form-label">Product Image</label>
+                        <div class="image-upload-container">
+                            <div class="upload-preview">
+                                <ion-icon name="image-outline"></ion-icon>
+                                <span>No image selected</span>
+                            </div>
+                            <label class="upload-btn">
+                                <input type="file" accept="image/*">
+                                <span>Choose Image</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary modal-cancel-btn">Cancel</button>
+                <button class="btn btn-primary">Add Product</button>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/admin-dashboard/products.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,587 @@
+/* Admin Dashboard Styles */
+.admin-nav {
+    display: flex;
+    background-color: var(--ios-system-background);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    /* padding: 0 16px; */
+    overflow-x: auto;
+    scrollbar-width: none;
+    justify-content:start;
+    -ms-overflow-style: none;
+}
+
+.admin-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.admin-nav-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+    background: none;
+    border: none;
+    color: var(--ios-label-secondary);
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.admin-nav-btn ion-icon {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.admin-nav-btn.active {
+    color: var(--ios-system-primary);
+}
+
+.admin-nav-btn.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    right: 16px;
+    height: 3px;
+    background-color: var(--ios-system-primary);
+    border-radius: 3px 3px 0 0;
+}
+
+.admin-main {
+    padding: 16px;
+}
+
+.admin-section {
+    display: none;
+}
+
+.admin-section.active {
+    display: block;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--ios-label-primary);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+/* Stats Cards */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.stat-card {
+    background-color: var(--ios-card-background);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    background-color: var(--ios-system-primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    color: white;
+}
+
+.stat-icon ion-icon {
+    font-size: 24px;
+}
+
+.stat-info h3 {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ios-label-secondary);
+    margin-bottom: 4px;
+}
+
+.stat-value {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ios-label-primary);
+    margin-bottom: 2px;
+}
+
+.stat-change {
+    font-size: 12px;
+}
+
+.stat-change.positive {
+    color: #34C759;
+}
+
+.stat-change.negative {
+    color: #FF3B30;
+}
+
+/* iOS Tables */
+.ios-table-container {
+    overflow-x: auto;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+}
+
+.ios-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--ios-card-background);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ios-table th {
+    background-color: var(--ios-system-primary);
+    color: white;
+    font-weight: 500;
+    padding: 12px 16px;
+    text-align: left;
+}
+
+.ios-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    vertical-align: middle;
+}
+
+.ios-table tr:last-child td {
+    border-bottom: none;
+}
+
+.ios-table-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--ios-system-gray6);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    color: var(--ios-label-primary);
+}
+
+.ios-table-btn.danger {
+    color: #FF3B30;
+}
+
+.ios-table-btn:active {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Modern Status Badges */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 1;
+    letter-spacing: 0.2px;
+}
+
+.status-badge::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 6px;
+    background: currentColor;
+    opacity: 0.8;
+}
+
+.status-badge.active {
+    background-color: rgba(52, 199, 89, 0.15);
+    color: #34C759;
+}
+
+.status-badge.inactive {
+    background-color: rgba(255, 59, 48, 0.15);
+    color: #FF3B30;
+}
+
+.status-badge.preparing {
+    background-color: rgba(255, 214, 10, 0.15);
+    color: #FFD60A;
+}
+
+.status-badge.ready {
+    background-color: rgba(0, 122, 255, 0.15);
+    color: #007AFF;
+}
+
+.status-badge.delivered {
+    background-color: rgba(88, 86, 214, 0.15);
+    color: #5856D6;
+}
+
+/* Status Badge with Icon */
+.status-badge.with-icon {
+    padding-left: 8px;
+}
+
+.status-badge.with-icon ion-icon {
+    font-size: 14px;
+    margin-right: 4px;
+}
+.table-product-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Search and Filter */
+.search-filter-bar {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.ios-search {
+    flex: 1;
+    background-color: var(--ios-system-gray6);
+    border-radius: 10px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+}
+
+.ios-search ion-icon {
+    color: var(--ios-system-gray2);
+    margin-right: 8px;
+}
+
+.ios-search input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.ios-select {
+    background-color: var(--ios-system-gray6);
+    border: none;
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-size: 14px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    padding-right: 36px;
+}
+
+.status-select {
+    padding: 4px 8px;
+    font-size: 12px;
+    background-position: right 4px center;
+    background-size: 12px;
+    min-width: 100px;
+}
+
+/* Buttons */
+.ios-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--ios-system-gray6);
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ios-label-primary);
+    gap: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.ios-button.primary {
+    background-color: var(--ios-system-primary);
+    color: white;
+}
+
+.ios-button:active {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.ios-button.primary:active {
+    background-color: var(--ios-system-btn-active);
+}
+
+/* Form Elements */
+.ios-form-group {
+    margin-bottom: 16px;
+}
+
+.ios-form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--ios-label-primary);
+}
+
+.ios-input {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: var(--ios-system-gray6);
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.ios-input:focus {
+    outline: 2px solid var(--ios-system-primary);
+}
+
+/* Image Upload */
+.image-upload {
+    border: 2px dashed var(--ios-system-gray2);
+    border-radius: 10px;
+    padding: 24px;
+    text-align: center;
+}
+
+.upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--ios-system-gray2);
+    cursor: pointer;
+}
+
+.upload-label ion-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.upload-label input {
+    display: none;
+}
+
+/* Analytics Cards */
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+}
+
+.analytics-card {
+    background-color: var(--ios-card-background);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.analytics-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.chart-placeholder {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--ios-system-gray6);
+    border-radius: 8px;
+}
+
+.chart-placeholder img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.top-products-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.top-product-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.product-rank {
+    width: 24px;
+    height: 24px;
+    background-color: var(--ios-system-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 12px;
+}
+
+.product-name {
+    flex: 1;
+    font-size: 14px;
+}
+
+.product-sales {
+    font-size: 12px;
+    color: var(--ios-label-secondary);
+}
+
+/* Settings Grid */
+.settings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+}
+
+.settings-card {
+    background-color: var(--ios-card-background);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.settings-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+/* Modal */
+.ios-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.ios-modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--ios-system-background);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    padding: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--ios-label-secondary);
+}
+
+.modal-body {
+    padding: 16px;
+}
+
+.modal-footer {
+    padding: 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+/* Admin Controls */
+.admin-controls {
+    display: flex;
+    gap: 8px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    .ios-app-wrapper {
+        padding: 0 !important;
+    }
+    .search-filter-bar {
+        flex-direction: column;
+    }
+    
+    .ios-search {
+        width: 100%;
+    }
+    
+    .ios-select {
+        width: 100%;
+    }
+    
+    .settings-grid {
+        grid-template-columns: 1fr;
+    }
+    .admin-nav {
+        justify-content:start;
+    }
+}
+
+.ios-app-wrapper {
+    max-width: 100% !important;
+    padding: 0 1rem;
+}
