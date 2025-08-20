@@ -6,10 +6,12 @@ from core.models import Language,EngineBotText,MasterBotText
 from customers.models import *
 from partners.models import *
 from telebot import TeleBot,types
+import time
 
 def initialize():
     global STAFF_INFO
     if config.ENABLE_WEBHOOK:
+        time.sleep(1) # rate-limit
         staff.set_webhook(config.WEBHOOK_URL)
         STAFF_INFO = staff.get_me()
 

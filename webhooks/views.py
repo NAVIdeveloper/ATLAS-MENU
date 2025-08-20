@@ -10,7 +10,7 @@ from webhooks import engine
 def initialize_telegram_bots():
     """Initialize bots at startup."""
     # engine.bot.initialize()
-    # master_bot.bot.initialize()
+    master_bot.bot.initialize()
 initialize_telegram_bots()
 
 def handle_webhook(request, bot):

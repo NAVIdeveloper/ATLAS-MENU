@@ -6,11 +6,12 @@ from core.models import *
 from customers.models import *
 from partners.models import *
 from telebot import TeleBot, types
-import telebot
+import telebot,time
 
 def initialize():
     if config.ENABLE_WEBHOOK:
         for i in Partner.objects.all():
+            time.sleep(1) # rate-limit
             BotManager.add_bot(i.bot_token,BotEngine(i.bot_token))
 
 class BotEngine:
